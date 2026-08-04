@@ -10,10 +10,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex # Change this to your main .tex file name
+          root_file: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.tex
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PDF-Output
-          path: main.pdf # Change this to match your output PDF name
+          name: Assignment-01-PDF
+          path: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.pdf
