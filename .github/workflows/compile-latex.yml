@@ -1,5 +1,10 @@
 name: Compile LaTeX
 on: [push]
+
+# Grant write permissions so the runner can save the PDF to your files
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,11 +16,11 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          # Sets the context to your exact assignment folder
           working_directory: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01
 
-      - name: Upload PDF Artifact
-        uses: actions/upload-artifact@v4
+      # New Step: Permanently commit the generated PDF back into your folder
+      - name: Commit and Push PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          name: Assignment-01-PDF
-          path: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.pdf
+          commit_message: "Automated PDF generation [skip ci]"
+          file_pattern: "01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.pdf"
