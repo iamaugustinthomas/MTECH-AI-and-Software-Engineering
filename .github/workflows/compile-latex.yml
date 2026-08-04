@@ -10,7 +10,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.tex
+          root_file: main.tex
+          # Sets the context to your exact assignment folder
+          working_directory: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
