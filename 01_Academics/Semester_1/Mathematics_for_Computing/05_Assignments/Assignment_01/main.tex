@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usetheme{CleanEasy}
 \usepackage{tikz}
+\AtBeginSection{} %this helps remove section slides, overrides the default section slide in the theme to show nothing
 
 
 \title{Mathematics for Computing}
@@ -12,7 +13,7 @@
     Department of Computer Science, C.U.S.A.T.\\
     Kochi, Kerala
 }
-\date{5\textsuperscript{th} August 2026}
+\date[5 Aug 2026]{5\textsuperscript{th} August 2026}
 
 \logo{\includegraphics[height=1cm]{Logo.png}}
 \begin{document}
@@ -23,12 +24,7 @@
 \end{frame}
 
 \begin{frame}{Contents}
-
-\begin{enumerate}
-\item  Introduction
-
-\end{enumerate}
-
+\tableofcontents
 \end{frame}
 
 
@@ -44,6 +40,7 @@
 \end{itemize}
 \end{frame}
 
+\section{Introduction}
 \begin{frame}{Introduction}
 \begin{itemize}
 
@@ -67,7 +64,7 @@ A set is well-defined unordered collection of distinct elements\\
 \end{itemize}
 
 \end{frame}
-
+\section{Set Builder Form}
 \begin{frame}{Set Builder Form}
 
 \begin{enumerate}
@@ -108,9 +105,44 @@ $  S=\{x\mid x^2<50\ \forall\ x \in\mathbb{Z}\} $
     
 \end{frame}
 
-\begin{frame}{Sets used in AI and ML Domain}
+\section{Sets used in A.I. and M.L. Domain}
+\begin{frame}{Sets used in A.I. and M.L. Domain}
+\pause
+\textbf{1.Machine Learning Datasets} \\
+\vspace{1ex}
+\pause
+A machine learning dataset is a structured collection of data used to train, validate, and test artificial intelligence models.\\
+\vspace{2ex}
+\pause
+\begin{itemize}
 
+
+\item \textbf{Total Dataset}
+A total dataset $\mathbf{D}$ is partitioned into input and output pairs (x,y) \\
+$D= \{(x_i,y_i)\mid i\in\ \mathbf{N}$
+\vspace{2ex}
+\pause
+\item \textbf{Training Set}\\
+$ \mathbf{D}_{Train}=\{(x_i,y_i)\in D \mid i \in \mathbf{I}_{Train} \}$  where $ \mathbf{I}_{Train}$ contains the specific training indices.\\
+\vspace{2ex}
+\pause
+\item \textbf{Test Set}\\
+$ \mathbf{D}_{Test}=\{(x_i,y_i)\in D \mid i \in\mathbf{N}\ and\ i \notin \mathbf{I}_{Train} \}$  where $ \mathbf{I}_{Train}$ contains the specific training indices.\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sets used in A.I. and M.L. Domain}
+    \textbf{2. Sets in Large Language Models} \\
+\vspace{1ex}
+\pause
+\begin{itemize}
+    \item Vocabulary Set ($\mathbf{V}$  )
+    $ \mathbf{V}=\{(x \mid x$ is a valid token,word or symbol in the model's dictionary\}
+\vspace{2ex}
+\pause
     
+\end{itemize}
+
 \end{frame}
 
 
