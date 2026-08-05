@@ -1,6 +1,8 @@
 \documentclass{beamer}
 \usepackage{amsmath}
 \usetheme{CleanEasy}
+\usepackage{tikz}
+
 
 \title{Mathematics for Computing}
 \subtitle{Assignment 1 : Set Theory}
@@ -9,17 +11,29 @@
     M.Tech. C.S.E. with specialization in A.I. \& Software Engineering \\
     Department of Computer Science, C.U.S.A.T.\\
     Kochi, Kerala
-}\date{5\textsuperscript{th} August 2026}
-%\colorlet{Theme_Color}{DC143C}
-%\definecolor{Theme_Color}{RGB}{165, 28, 48}
-\definecolor{Theme_Color}{rgb}{0.2, 0.2, 0.7}
+}
+\date{5\textsuperscript{th} August 2026}
+
+\logo{\includegraphics[height=1cm]{Logo.png}}
 \begin{document}
- 
+\begin{frame}[plain]    
+
 \maketitle
 
+\end{frame}
+
+\begin{frame}{Contents}
+
+\begin{enumerate}
+\item  Introduction
+
+\end{enumerate}
+
+\end{frame}
+
+
 \begin{frame}{Assignment No.1}
-    
-{Questions }
+    Questions 
 \begin{itemize}
 
     \item 10 sets and their set builder form
@@ -28,7 +42,6 @@
     \item Haffe Diagram of two partially ordered sets.
     
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Introduction}
@@ -36,14 +49,16 @@
 
 \item \textbf{What is a set? }\\
 \vspace{0.2 cm}
+\pause
 A set is well-defined unordered collection of distinct elements\\
+\pause
 \vspace{0.2 cm}
 \begin{itemize}
  
 \item Example of set:\{1,7,19,20,14 \} \\
 \item Example of set:\{a,e,i,o,u \}\\
 \item Example of a set: Empty set (no items): \{ \} or $ \phi $\\
-
+\pause
 
 \vspace{0.2 cm}
 \item Example of \textcolor{red}{not} a set: Set of all tall people in this room \\
@@ -51,6 +66,51 @@ A set is well-defined unordered collection of distinct elements\\
 \end{itemize}
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}{Set Builder Form}
+
+\begin{enumerate}
+    \item A=\{ $1,\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4},... $\} \\
+    \vspace{1ex}
+    Set Builder Form: \\
+    \vspace{1ex}
+    
+    \pause
+     \hspace{6em} A=\{$\dfrac{1}{n} \mid n \in \mathbb{Z}^+ $ \}
+     \vspace{2ex}
+     \pause
+    \item Using Cartesian plane, write set $ Q_1$ of all coordinate points (x,y) in first quadrant \\
+    \vspace{1ex}
+      Set Builder Form: \\
+    \vspace{1ex}
+    \pause
+     \hspace{3em} $ Q_1=\{(x,y)\mid x,y \in \mathbb{R} \ and \ x>0 \ and \ y>0 $ \}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Set Builder Form}
+
+3. Define the set E of all integers that leave a reminder of 3 when divided by 4.\\
+
+\vspace{1ex}
+
+\pause
+
+\hspace{6em} $E= \{ x \mid x=4y+3, \ \forall \ y\in\mathbb{N}\}$ \\
+\pause
+\vspace{1ex}
+4. Write a set of all integers whose square is strictly less than 50.\\
+\vspace{1em}
+\pause
+\hspace{6em} 
+$  S=\{x\mid x^2<50\ \forall\ x \in\mathbb{Z}\} $
+    
+\end{frame}
+
+\begin{frame}{Sets used in AI and ML Domain}
+
+    
 \end{frame}
 
 
