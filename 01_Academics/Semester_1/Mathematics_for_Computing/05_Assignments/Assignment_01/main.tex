@@ -1,8 +1,12 @@
 \documentclass{beamer}
 \usepackage{amsmath}
+\usepackage{amssymb} % Required for \mathbb symbols
 \usetheme{CleanEasy}
 \usepackage{tikz}
-\AtBeginSection{} %this helps remove section slides, overrides the default section slide in the theme to show nothing
+\usepackage{venndiagram} 
+\usepackage{graphicx} 
+
+\AtBeginSection{} % this helps to remove section slides, overrides the default section slide in the theme to show nothing. its useful as the section slide of the theme is not good . i think it is a little bit offset from centre and sometimes not needed. atleast here. but the problem is that for table of contents to work , we need the \section thing.
 
 
 \title{Mathematics for Computing}
@@ -35,7 +39,7 @@
     \item 10 sets and their set builder form
     \item Example for every type of set from AI and ML Domain.
     \item General form of inclusion - exclusion principle
-    \item Haffe Diagram of two partially ordered sets.
+    \item Hasse Diagram of two partially ordered sets.
     
 \end{itemize}
 \end{frame}
@@ -52,14 +56,14 @@ A set is well-defined unordered collection of distinct elements\\
 \vspace{0.2 cm}
 \begin{itemize}
  
-\item Example of set:\{1,7,19,20,14 \} \\
-\item Example of set:\{a,e,i,o,u \}\\
+\item Example of set: \{1,7,19,20,14\} \\
+\item Example of set: \{a,e,i,o,u\}\\
 \item Example of a set: Empty set (no items): \{ \} or $ \phi $\\
 \pause
 
 \vspace{0.2 cm}
 \item Example of \textcolor{red}{not} a set: Set of all tall people in this room \\
-\item Example of \textcolor{red}{not} a set:The collection of the best football players in the world.\\
+\item Example of \textcolor{red}{not} a set: The collection of the best football players in the world.\\
 \end{itemize}
 \end{itemize}
 
@@ -68,13 +72,13 @@ A set is well-defined unordered collection of distinct elements\\
 \begin{frame}{Set Builder Form}
 
 \begin{enumerate}
-    \item A=\{ $1,\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4},... $\} \\
+    \item $A=\{ 1,\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4},... \}$ \\
     \vspace{1ex}
     Set Builder Form: \\
     \vspace{1ex}
     
     \pause
-     \hspace{6em} A=\{$\dfrac{1}{n} \mid n \in \mathbb{Z}^+ $ \}
+     \hspace{6em} $A=\{\dfrac{1}{n} \mid n \in \mathbb{Z}^+ \}$
      \vspace{2ex}
      \pause
     \item Using Cartesian plane, write set $ Q_1$ of all coordinate points (x,y) in first quadrant \\
@@ -82,7 +86,7 @@ A set is well-defined unordered collection of distinct elements\\
       Set Builder Form: \\
     \vspace{1ex}
     \pause
-     \hspace{3em} $ Q_1=\{(x,y)\mid x,y \in \mathbb{R} \ and \ x>0 \ and \ y>0 $ \}
+     \hspace{3em} $ Q_1=\{(x,y)\mid x,y \in \mathbb{R} \text{ and } x>0 \text{ and } y>0 \}$
 \end{enumerate}
 \end{frame}
 
@@ -105,44 +109,211 @@ $  S=\{x\mid x^2<50\ \forall\ x \in\mathbb{Z}\} $
     
 \end{frame}
 
-\section{Sets used in A.I. and M.L. Domain}
-\begin{frame}{Sets used in A.I. and M.L. Domain}
+\section{Example of Sets (from A.I. and M.L. Domain)}
+\begin{frame}{Example of Sets (from A.I. and M.L. Domain)}
 \pause
-\textbf{1.Machine Learning Datasets} \\
-\vspace{1ex}
-\pause
-A machine learning dataset is a structured collection of data used to train, validate, and test artificial intelligence models.\\
-\vspace{2ex}
-\pause
-\begin{itemize}
 
-
-\item \textbf{Total Dataset}
-A total dataset $\mathbf{D}$ is partitioned into input and output pairs (x,y) \\
-$D= \{(x_i,y_i)\mid i\in\ \mathbf{N}$
-\vspace{2ex}
-\pause
-\item \textbf{Training Set}\\
-$ \mathbf{D}_{Train}=\{(x_i,y_i)\in D \mid i \in \mathbf{I}_{Train} \}$  where $ \mathbf{I}_{Train}$ contains the specific training indices.\\
-\vspace{2ex}
-\pause
-\item \textbf{Test Set}\\
-$ \mathbf{D}_{Test}=\{(x_i,y_i)\in D \mid i \in\mathbf{N}\ and\ i \notin \mathbf{I}_{Train} \}$  where $ \mathbf{I}_{Train}$ contains the specific training indices.\\
-\end{itemize}
 \end{frame}
 
-\begin{frame}{Sets used in A.I. and M.L. Domain}
-    \textbf{2. Sets in Large Language Models} \\
-\vspace{1ex}
-\pause
+\section{Inclusion - Exclusion Principle}
+\begin{frame}[fragile]{Inclusion - Exclusion Principle}
 \begin{itemize}
-    \item Vocabulary Set ($\mathbf{V}$  )
-    $ \mathbf{V}=\{(x \mid x$ is a valid token,word or symbol in the model's dictionary\}
-\vspace{2ex}
-\pause
-    
+    \item \textbf{What is Inclusion Exclusion Principle?}\\
+    \quad The Inclusion Exclusion principle is a counting method used to find the number of elements in the union of multiple sets.
+
+\item For two sets \textbf{A and B} \\
+\end{itemize}
+\begin{center}
+$ \mid A \cup B \mid = \mid A \mid + \mid B \mid - \mid A\cap B \mid $
+\vspace{1 em}
+\\
+\setlength{\fboxsep}{8pt}
+\fbox{
+\begin{tikzpicture}
+  % Draw Set A
+  \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  
+  % Draw Set B
+  \draw (1.5,0) circle (1.5cm) node[below right] {$B$};
+  
+  % Label the intersection
+  \node at (0.75,0) {$A \cap B$};
+\end{tikzpicture}
+}
+\\
+\end{center}
+\begin{center}
+ {$ \mid A \cup B \mid $}   
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]{Inclusion - Exclusion Principle}
+\begin{itemize}
+\item For three sets \textbf{A, B and C}
 \end{itemize}
 
+\begin{center}
+$ | A \cup B \cup C | = | A | + | B | + | C | - | A \cap B | - | A \cap C | - | B \cap C | + | A \cap B \cap C | $
+\vspace{1em}
+\
+\setlength{\fboxsep}{8pt}
+\fbox{
+\begin{tikzpicture}[scale=0.9]
+  % Draw Set A
+  \draw (0,0) circle (1.5cm);
+  \node at (-0.8, 0.8) {$A$};
+  
+  % Draw Set B
+  \draw (2,0) circle (1.5cm);
+  \node at (2.8, 0.8) {$B$};
+  
+  % Draw Set C
+  \draw (1,-1.732) circle (1.5cm);
+  \node at (1, -2.732) {$C$};
+  
+
+\end{tikzpicture}
+}
+\\
+\end{center}
+
+\begin{center}
+ {$ | A \cup B \cup C | $}   
+\end{center}
+\end{frame}
+
+\section{General form of Inclusion-Exclusion Principle}
+\begin{frame}{General form of Inclusion-Exclusion Principle}
+
+For finite sets $A_1, A_2, A_3, \dots, A_n$, the total number of elements in their union is:
+\vspace{0.5em}
+
+\[ 
+\begin{aligned}
+\left\lvert \bigcup_{i=1}^{n} A_i \right\rvert &= \sum_{i=1}^{n} |A_i| \\
+&\quad - \sum_{1 \le i < j \le n} |A_i \cap A_j| \\
+&\quad + \sum_{1 \le i < j < k \le n} |A_i \cap A_j \cap A_k| \\
+&\quad - \cdots \\
+&\quad + (-1)^{n-1} |A_1 \cap A_2 \cap \cdots \cap A_n|
+\end{aligned}
+\] 
+
+\end{frame}
+
+\section{General form of Inclusion-Exclusion Principle}
+\begin{frame}{General form of Inclusion-Exclusion Principle}
+
+For finite sets $A_1, A_2, A_3, \dots, A_n$, the total number of elements in their union is:
+\vspace{1em}
+
+\[ 
+\left\lvert \bigcup_{i=1}^{n} A_i \right\rvert = \sum_{k=1}^{n} (-1)^{k-1} \left( \sum_{1 \le i_1 < i_2 < \dots < i_k \le n} |A_{i_1} \cap A_{i_2} \cap \dots \cap A_{i_k}| \right)
+\] 
+
+\end{frame}
+
+\section{Poset}
+\begin{frame}{What is a Poset?}
+A partially ordered set is a a set where we have defined a specific rule fro how elements in a set relate to each other.\\
+\vspace{1 ex}
+For a set to be a poset, the following three conditions must be met 
+\begin{itemize}
+    \item Reflexive: Every item relates to itself.
+    \item Antisymmetric: If item $\mathbf{A}$ relates to item $\mathbf{B}$ and item $\mathbf{B}$ relates back to item $\mathbf{A}$, then they must actaually be the exact same item.
+    \item Transitive If $\mathbf{A}$ relates to $\mathbf{B}$ and $\mathbf{B}$  relates to $\mathbf{C}$ , then $\mathbf{A}$ automatically relates to $\mathbf{C}$ 
+\end{itemize}
+
+    
+\end{frame}
+
+\section{Hasse Diagram}
+\begin{frame}{Hasse Diagram}
+A graphical representation of a partial order relation in which all arrowheads are understood to be pointing upward is known as the Hasse Diagram.
+
+\vspace{0.5cm} % Adds some space between the text and the diagram
+
+\textbf{Example:} Let $A = \{1, 2, 3, 4, 6, 8\}$ be ordered by the relation ``$a$ divides $b$''.
+
+\begin{center}
+    \begin{tikzpicture}
+        % Define the nodes (elements of the set)
+        \node (1) at (0,0) {1};
+        \node (2) at (-1,1.2) {2};
+        \node (3) at (1,1.2) {3};
+        \node (4) at (-2,2.4) {4};
+        \node (6) at (0,2.4) {6};
+        \node (8) at (-2,3.6) {8};
+        
+        % Draw the edges representing the covering relations
+        \draw (1) -- (2);
+        \draw (1) -- (3);
+        \draw (2) -- (4);
+        \draw (2) -- (6);
+        \draw (3) -- (6);
+        \draw (4) -- (8);
+    \end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\section{Hasse Diagram of Poset}
+\section{Hasse Diagram}
+\begin{frame}{Hasse Diagram}
+
+\textbf{Example:} The power set of $S = \{1, 2, 3\}$ ordered by subset inclusion ($\subseteq$).
+
+\begin{center}
+   
+    \begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+        
+        % Level 0 (Bottom)
+        \node (empty) at (0,0) {$\emptyset$};
+        
+        % Level 1
+        \node (1) at (-2,1.5) {$\{1\}$};
+        \node (2) at (0,1.5) {$\{2\}$};
+        \node (3) at (2,1.5) {$\{3\}$};
+        
+        % Level 2
+        \node (12) at (-2,3) {$\{1, 2\}$};
+        \node (13) at (0,3) {$\{1, 3\}$};
+        \node (23) at (2,3) {$\{2, 3\}$};
+        
+        % Level 3 (Top)
+        \node (123) at (0,4.5) {$\{1, 2, 3\}$};
+        
+        % Draw edges from Level 0 to Level 1
+        \draw (empty) -- (1);
+        \draw (empty) -- (2);
+        \draw (empty) -- (3);
+        
+        % Draw edges from Level 1 to Level 2
+        \draw (1) -- (12);
+        \draw (1) -- (13);
+        \draw (2) -- (12);
+        \draw (2) -- (23);
+        \draw (3) -- (13);
+        \draw (3) -- (23);
+        
+        % Draw edges from Level 2 to Level 3
+        \draw (12) -- (123);
+        \draw (13) -- (123);
+        \draw (23) -- (123);
+        
+    \end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{}
+\begin{center}
+  \LARGE\bfseries{Thank You}  \\
+  \vspace{1 ex}
+  %\includegraphics[height=1cm]{Logo.png}\\
+  Augustin Thomas
+  
+\end{center}
+    
 \end{frame}
 
 
