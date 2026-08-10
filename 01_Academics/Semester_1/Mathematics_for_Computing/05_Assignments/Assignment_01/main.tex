@@ -109,11 +109,86 @@ $  S=\{x\mid x^2<50\ \forall\ x \in\mathbb{Z}\} $
     
 \end{frame}
 
-\section{Example of Sets (from A.I. and M.L. Domain)}
-\begin{frame}{Example of Sets (from A.I. and M.L. Domain)}
-\pause
+\begin{frame}{Set Builder Form}
 
+    5. Translate the half open real interval $[-7,\infty)$ into formal set builder notation.\\
+  \begin{center}
+  $ \mathbf{S} = \{ x \mid -7 \leq x \le \infty, \forall x \in \mathbb{R} \}$ 
+ \end{center}
+  \vspace{1 em}
+  6.Write the set D of all positive integer divisor of 24.\\
+ \begin{center}
+    
+$ \mathbf{D} = \{ x \in\mathbb{Z}\mid kx=24\ \forall\ k \in \mathbb{Z}\}$\\
+ \end{center}
 \end{frame}
+
+\begin{frame}{Set Builder Form}
+    7.Define the set $\mathbf{T}$ of all pythogorean triplets.\\
+    \begin{center}
+        $\mathbf{T}=\{x,y,z\mid\sqrt{x^2+y^2}=z,\forall x,y,z\in \mathbb{Z^+}\} $
+    \end{center}
+    8.Define set M of all natural numbers that are multiple of both 3 and 5.
+    \begin{center}
+        $\mathbf{M}=\{x\mid x=3k,\forall k \in \mathbb{N}\ and\ x=5q,\forall \ q\in \mathbb{N}\}$
+    \end{center}    
+\end{frame}
+
+\begin{frame}{Set Builder Form}
+9. Express the set $\mathbf{S}=\{1,8,27,64,125,...\}$\\
+\begin{center}
+    $S=\{x\mid x=y^3\ \forall \ y \in \mathbb{N}\}$ 
+\end{center}
+\vspace{1 em}
+10. Define the set $\mathbf{M}$ of all real numbers that are within a distance of 5 units from the number 12 on the number line.
+\begin{center}
+    $\mathbf{M}=\{x: | x-12 | \leq5\}$
+\end{center}
+    
+\end{frame}
+
+
+\section{Example for every type of set from AI and ML Domain}
+\begin{frame}{Example for every type of set from AI and ML Domain }
+    \begin{itemize}
+        \item \textbf{Universal Set ($\mathcal{U}$):} The set of all elements under consideration, meaning any set $A$ is a subset of it ($A \subseteq \mathcal{U}$). 
+        \\ \textit{ML Example:} All possible emails that a spam filter could ever receive in the real world.
+        
+        \vspace{0.5cm}
+        \item \textbf{Finite Set:} A set with a countable, limited number of elements, where its size (cardinality) is $|S| = n$ for some integer $n$. 
+        \\ \textit{ML Example:} The target labels in a sentiment analysis model: $\{\text{Positive}, \text{Neutral}, \text{Negative}\}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example for every type of set from AI and ML Domain }
+    \begin{itemize}
+        \item \textbf{Infinite Set:} A set with an endless number of elements, where $|S| = \infty$. 
+        \\ \textit{ML Example:} All the possible decimal values a neural network weight can take between $0$ and $1$, represented mathematically as the continuous interval $[0, 1]$.
+        
+        \vspace{0.5cm}
+        \item \textbf{Empty Set ($\emptyset$):} A set containing zero elements, meaning $|\emptyset| = 0$. 
+        \\ \textit{ML Example:} The overlap (intersection) between a properly split Training set ($A$) and Testing set ($B$). To avoid leakage, they share no elements: $A \cap B = \emptyset$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example for every type of set from AI and ML Domain }
+    \begin{itemize}
+        \item \textbf{Singleton Set:} A set containing exactly one element, meaning $|S| = 1$, or $S = \{x\}$.
+        \\ \textit{ML Example:} A batch of data containing exactly one sample, used when a model is making a single real-time prediction in production.
+        
+        \vspace{0.5cm}
+        \item \textbf{Subset ($A \subseteq B$):} Every element in $A$ is also contained in $B$, defined logically as $\forall x (x \in A \implies x \in B)$.
+        \\ \textit{ML Example:} The Validation dataset is a subset of the total collected historical data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example for every type of set from AI and ML Domain }
+    \begin{itemize}
+        \item \textbf{Disjoint Sets:} Two sets that share no common elements whatsoever, defined as $A \cap B = \emptyset$.
+        \\ \textit{ML Example:} The set of images labeled "Cat" ($A$) and the set labeled "Car" ($B$), assuming an image can only be exactly one of these.
+    \end{itemize}
+\end{frame}
+
 
 \section{Inclusion - Exclusion Principle}
 \begin{frame}[fragile]{Inclusion - Exclusion Principle}
@@ -200,8 +275,6 @@ For finite sets $A_1, A_2, A_3, \dots, A_n$, the total number of elements in the
 \] 
 
 \end{frame}
-
-\section{General form of Inclusion-Exclusion Principle}
 \begin{frame}{General form of Inclusion-Exclusion Principle}
 
 For finite sets $A_1, A_2, A_3, \dots, A_n$, the total number of elements in their union is:
@@ -227,7 +300,7 @@ For a set to be a poset, the following three conditions must be met
     
 \end{frame}
 
-\section{Hasse Diagram}
+\section{Hasse Diagram of Poset}
 \begin{frame}{Hasse Diagram}
 A graphical representation of a partial order relation in which all arrowheads are understood to be pointing upward is known as the Hasse Diagram.
 
@@ -257,8 +330,6 @@ A graphical representation of a partial order relation in which all arrowheads a
 \end{frame}
 
 
-\section{Hasse Diagram of Poset}
-\section{Hasse Diagram}
 \begin{frame}{Hasse Diagram}
 
 \textbf{Example:} The power set of $S = \{1, 2, 3\}$ ordered by subset inclusion ($\subseteq$).
@@ -306,14 +377,17 @@ A graphical representation of a partial order relation in which all arrowheads a
 \end{frame}
 
 \begin{frame}{}
+\vspace{2 cm}
 \begin{center}
   \LARGE\bfseries{Thank You}  \\
-  \vspace{1 ex}
-  %\includegraphics[height=1cm]{Logo.png}\\
-  Augustin Thomas
   
 \end{center}
+\begin{center}
+       %\includegraphics[height=2cm]{Aug.jpg}\\
+  Augustin Thomas  
+\end{center}
     
+
 \end{frame}
 
 
