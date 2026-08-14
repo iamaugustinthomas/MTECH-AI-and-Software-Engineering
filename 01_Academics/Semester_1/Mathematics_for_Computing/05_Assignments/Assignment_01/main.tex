@@ -38,6 +38,7 @@
 
     \item 10 sets and their set builder form
     \item Example for every type of set from AI and ML Domain.
+    \item Set Operations
     \item General form of inclusion - exclusion principle
     \item Hasse Diagram of two partially ordered sets.
     
@@ -188,7 +189,207 @@ $ \mathbf{D} = \{ x \in\mathbb{Z}\mid kx=24\ \forall\ k \in \mathbb{Z}\}$\\
         \\ \textit{ML Example:} The set of images labeled "Cat" ($A$) and the set labeled "Car" ($B$), assuming an image can only be exactly one of these.
     \end{itemize}
 \end{frame}
+\section{Set Operations}
+\begin{frame}{Set Operations}
+There are 6 major operations on set.
+\begin{itemize}
+    \item Union of Sets
+    \item Intersection
+    \item Disjoint Set
+    \item Set Difference 
+    \item Symmetric Difference
+    \item Complement of a set   
+\end{itemize}
+    
+\end{frame}
 
+\begin{frame}{Union of Sets}
+The Union of Sets A and B denoted by A $\cup$ B, is the set of distinct elements that belong to set A or set B, or both.\\
+The operation can be represented as:\\
+\begin{center}
+    $A\cup B=\{x|x\in A\ or\ x\in B\}$
+\end{center}
+ The union includes every element that appears in either of the two sets, without any repetition.
+ \begin{center}
+     
+
+ \setlength{\fboxsep}{5pt}
+\fbox{
+\begin{tikzpicture}
+   
+  \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  
+   
+  \draw (1.5,0) circle (1.5cm) node[below right] {$B$};
+  
+    
+  \node at (0.75,0) {};
+\end{tikzpicture}
+}
+ \end{center}
+ \begin{center}
+ {$ | A \cup B \cup C | $}   
+\end{center}
+
+\end{frame}
+\begin{frame}{Union of Sets Example}
+    Example: Find the union of $A = \{2, 3, 4\} and B = \{3, 4, 5\}$.\\
+Solution:\\
+\centering
+$A \cup B = \{2, 3, 4, 5\}.$
+\end{frame}
+
+\begin{frame}{Intersection}
+    The intersection of the sets A and B, denoted by A $\cap$ B, is the set of elements that belong to both A and B, i.e. set of the common elements in A and B. This operation is represented as:
+    \begin{center}
+        $A \cap B =\{x :x\in A\ and\ x\in\ B\}$
+    \end{center}
+    \begin{center}
+        
+   
+    The intersection contains only those elements that are present in both sets. 
+    \end{center}
+    \begin{center}
+        
+    \setlength{\fboxsep}{8pt}
+\fbox{
+\begin{tikzpicture}
+  \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  
+  \draw (1.5,0) circle (1.5cm) node[below right] {$B$};
+  
+  \node at (0.75,0) {$A \cap B$};
+\end{tikzpicture}
+}
+\end{center}
+\begin{center}
+ {$ \mid A \cup B \mid $}   
+\end{center}
+    
+\end{frame}
+
+\begin{frame}{Intersection of Sets Example}
+    Example: Find the union of $A = \{2, 3, 4\} and B = \{3, 4, 5\}$.\\
+Solution:\\
+\centering
+$A \cap B = \{3, 4\}.$
+\end{frame}
+
+
+\begin{frame}{Disjoint Set}
+Two sets are said to be disjoint if their intersection is the empty set. i.e., sets have no common elements. In simpler terms, they don’t “overlap” at all.
+So if you try to find their intersection, you’ll get the empty set, which we denote by the symbol $ \phi\ or\ \{\}$.\\
+The sets A and B are disjoint, meaning they have no common elements (no overlap).
+ \begin{center}
+        
+    \setlength{\fboxsep}{8pt}
+\fbox{
+\begin{tikzpicture}
+  \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  
+  \draw (4,0) circle (1.5cm) node[below right] {$B$};
+\end{tikzpicture}
+}
+\end{center}
+    
+\end{frame}
+\begin{frame}{Disjoint Sets Example}
+    Example:The sets  $A = \{2, 3, 4\} and B = \{5, 6, 7\}$. are disjoint\\
+\vspace{2em}
+     Example:The sets  $A = \{a,e, i, o,u\}\ and\ B = \{b,c,d\}$. are disjoint\\
+     \vspace{2em}
+     Example:The sets  $A = \{10,100,100,1000\}\ and\ B = \{a,b,c,d\}$. are disjoint\\
+\end{frame}
+
+\begin{frame}{Set Difference }
+    The difference between sets is denoted by $A - B$, which is the set containing elements that are in A but not in B i e , all elements of A except the element of B.\\
+\begin{center}
+    \setlength{\fboxsep}{5pt}
+\fbox{
+\begin{tikzpicture}
+ 
+  \begin{scope}
+   
+    \clip (0,0) circle (1.5cm);
+
+    \fill[lightgray, even odd rule] (0,0) circle (1.5cm) (1.5,0) circle (1.5cm);
+  \end{scope}
+  
+    \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  
+    \draw (1.5,0) circle (1.5cm) node[below right] {$B$};
+  
+  \node at (0.75,0) {};
+\end{tikzpicture}
+}
+\end{center}
+    
+\end{frame}
+
+\begin{frame}{Set Difference Example}
+    Example: If  $A = \{1,2, 3, 4,5\} and B = \{2, 4, 6,8\},find\ A-B$.\\
+Solution:\\
+\centering
+$A - B = \{1,3, 5\}.$
+\end{frame}
+
+\begin{frame}{Symmetric Difference}
+    The symmetric difference of A and B includes elements in A or B but not both.It is denoted by
+    \begin{center}
+        $A\triangle B$
+    \end{center}
+    \begin{center}
+        $A\triangle B=(A-B)\cup(B-A)$
+    \end{center}
+    \setlength{\fboxsep}{5pt}
+\begin{center}
+\setlength{\fboxsep}{5pt}
+\fbox{
+\begin{tikzpicture}
+  \fill[lightgray, even odd rule] (0,0) circle (1.5cm) (1.5,0) circle (1.5cm);
+  
+  \draw (0,0) circle (1.5cm) node[below left] {$A$};
+  \draw (1.5,0) circle (1.5cm) node[below right] {$B$};
+  \node at (0.75,0) {};
+\end{tikzpicture}
+}
+\end{center}
+
+    
+\end{frame}
+
+\begin{frame}{Symmetric Difference Example}
+    Example: If  $A = \{1,2, 3\} and B = \{3, 4, 5\},$ find the symmetric difference.\\
+Solution:\\
+\centering
+$A \triangle B = \{1,2,4,5\}.$
+\end{frame}
+
+\begin{frame}{Complement of a Set}
+If U is a universal set and X is any subset of U, then the complement of X consists of all the elements in U that are not in X.
+\begin{center}
+
+\begin{tikzpicture}
+  \fill[lightgray, even odd rule] (-2.5,-2.5) rectangle (2.5,2.5) (0,0) circle (1.5cm);
+  
+  \draw (-2.5,-2.5) rectangle (2.5,2.5);
+  \node[below right] at (-2.5,2.5) {$U$};
+  
+  \draw (0,0) circle (1.5cm) node {$A$};
+  
+  \node at (1.8, 1.8) {$A^{c}$};
+\end{tikzpicture}
+
+\end{center}
+    
+\end{frame}
+
+\begin{frame}{Example of Complement of a Set }
+    Example: If  $U = \{1,2, 3,4,5,6,7,8,9\}\ and\ A = \{3, 4, 5\},$ find $A^{'}$.\\
+Solution:\\
+\centering
+$A^{c} = \{1,2,6,7,8,9\}.$
+\end{frame}
 
 \section{Inclusion - Exclusion Principle}
 \begin{frame}[fragile]{Inclusion - Exclusion Principle}
@@ -304,7 +505,6 @@ For a set to be a poset, the following three conditions must be met
 \begin{frame}{Hasse Diagram}
 A graphical representation of a partial order relation in which all arrowheads are understood to be pointing upward is known as the Hasse Diagram.
 
-\vspace{0.5cm} % Adds some space between the text and the diagram
 
 \textbf{Example:} Let $A = \{1, 2, 3, 4, 6, 8\}$ be ordered by the relation ``$a$ divides $b$''.
 
