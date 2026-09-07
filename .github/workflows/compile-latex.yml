@@ -15,16 +15,22 @@ jobs:
       - name: Install fonts for PDF generation
         run: sudo apt-get update && sudo apt-get install -y fonts-dejavu fonts-liberation
 
-      - name: Compile LaTeX document
+      - name: Compile LaTeX document - Assignment 01
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           working_directory: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01
           compiler: pdflatex
 
-      # New Step: Permanently commit the generated PDF back into your folder
+      - name: Compile LaTeX document - Assignment X
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: "01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment X"
+          compiler: pdflatex
+
       - name: Commit and Push PDF
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated PDF generation [skip ci]"
-          file_pattern: "01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01/main.pdf"
+          file_pattern: "**/*.pdf"
