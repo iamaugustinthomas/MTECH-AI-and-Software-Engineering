@@ -26,7 +26,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          working_directory: "01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment X"
+          working_directory: "01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_03"
           compiler: pdflatex
 
       - name: Commit and Push PDF
