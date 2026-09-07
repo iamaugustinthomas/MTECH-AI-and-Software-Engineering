@@ -20,6 +20,7 @@ jobs:
         with:
           root_file: main.tex
           working_directory: 01_Academics/Semester_1/Mathematics_for_Computing/05_Assignments/Assignment_01
+          compiler: pdflatex
 
       # New Step: Permanently commit the generated PDF back into your folder
       - name: Commit and Push PDF
