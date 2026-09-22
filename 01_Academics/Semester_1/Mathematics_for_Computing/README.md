@@ -2,9 +2,9 @@
 
 ## Course Information
 
-- Semester:
-- Faculty:
-- Credits:
+- Semester: First 
+- Faculty: Shailesh Sir
+- Credits:4
 
 ## Folder Structure
 
@@ -18,23 +18,4 @@
 - 08_PYQs
 - 09_Revision
 
-## Weekly Progress
 
-| Week | Status | Notes |
-|------|--------|-------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-| 6 | | |
-| 7 | | |
-| 8 | | |
-| 9 | | |
-|10 | | |
-|11 | | |
-|12 | | |
-|13 | | |
-|14 | | |
-|15 | | |
-|16 | | |
