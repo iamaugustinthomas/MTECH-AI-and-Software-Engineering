@@ -2,9 +2,9 @@
 
 ## Course Information
 
-- Semester:
-- Faculty:
-- Credits:
+- Semester: First 
+- Faculty: Shailesh Sir
+- Credits:4
 
 ## Folder Structure
 
